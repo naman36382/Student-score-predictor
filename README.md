@@ -70,6 +70,15 @@ warnings.filterwarnings("ignore")
 - warnings is imported to suppress unnecessary warnings during execution.
 
 # Initializing Flask App
+Install all the packages required for this flask app. Run the following command:
+**Windows Command Prompt:**
+```
+pip install Flask pandas numpy scikit-learn
+```
+**MacOS & Linux Terminal:**
+```terminal
+pip3 install Flask pandas numpy scikit-learn
+```
 The Flask app is created and assigned to the variable app.
 ```python
 app = Flask(__name__)
