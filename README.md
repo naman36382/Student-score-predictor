@@ -1,5 +1,3 @@
-# Student-score-predictor
-This project is a simple web application built with Flask that predicts a student's G3 score based on input features such as absences, study time, G1, and G2. The application includes a dark-themed navigation bar and form with a sleek design.
 # Student Board Predictor
 
 This project implements a web application using Flask that predicts a student's final exam score (G3) based on input features such as absences, study time, and grades in the first two exams (G1 and G2). The prediction model is implemented using the Logistic Regression algorithm from scikit-learn, and the web interface is built using Flask, HTML, and CSS.
