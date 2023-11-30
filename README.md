@@ -2,7 +2,53 @@
 
 This project implements a web application using Flask that predicts a student's final exam score (G3) based on input features such as absences, study time, and grades in the first two exams (G1 and G2). The prediction model is implemented using the Logistic Regression algorithm from scikit-learn, and the web interface is built using Flask, HTML, and CSS.
 
+# Project Structure
+Create a Flask Project Folder
+- `main.py`: Your main Flask application file.
+- `templates/`: Folder to store HTML templates.
+- `static/`: Folder to store static files like CSS.
+```red
+Student-score-predictor/
+├── main.py
+├── templates/
+│   └── index.html
+└── static/
+    └── styles.css
+```
+# Using Jinja in HTML
+1. **Linking CSS in HTML:**
+In `index.html`, link your CSS file using Jinja to generate the correct path.
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Other head elements -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <!-- Other stylesheets or meta tags -->
+</head>
+<body>
+    <!-- Content of the HTML body -->
+</body>
+</html>
+```
+2. **Using Jinja for Conditionals (If Statements)**
+   In your HTML template (`index.html`), use Jinja to conditionally render content.
+```html
+{% if not prediction %}
+<!-- Show form when prediction is not available -->
+<form action="{{ url_for('home') }}" method="post">
+    <!-- Input fields and submit button -->
+</form>
+{% endif %}
 
+{% if prediction %}
+<!-- Show result when prediction is available -->
+<div class="result-box">
+    <h3>Predicted G3:</h3>
+    <p>{{ prediction }}</p>
+</div>
+{% endif %}
+```
 This file (main.py) is the main script for a Flask web application that predicts a student's final exam score based on input features. The script includes the Flask app setup, route definition, model training, and prediction logic.
 # Importing Libraries
 ### main.py
