@@ -60,8 +60,17 @@ def predict(absences, studytime, G1, G2):
     X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.2, random_state=2)
     model = LogisticRegression(max_iter=1000)
     model.fit(X_train, Y_train)
+
     input_data = np.array([int(absences), int(studytime), int(G1), int(G2)]).reshape(1, -1)
     prediction = model.predict(input_data)
     return prediction[0]
 
+```
+# Running the Flask App
+- Checks if the script is being run directly.
+- If true, the Flask app is run in debug mode.
+- This script, along with the HTML template and CSS file, creates a simple web interface for predicting student exam scores based on input parameters.
+```python
+if __name__ == '__main__':  
+    app.run(debug=True)
 ```
